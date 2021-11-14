@@ -22,23 +22,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.tlTabBar.apply {
-            addTab(newTab().setText("탭1번"))
-            addTab(newTab().setText("탭2번"))
+        supportFragmentManager
+            .beginTransaction()
+            .replace(binding.flFragmentContainer.id, MainFragment())
+            .commit()
 
-            setOnTabSelectedListener(object : OnTabSelectedListener {
-                override fun onTabSelected(tab: TabLayout.Tab) {
-                    val selected = if (tab.position == 0) TabOneFragment() else TabTwoFragment()
-
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(binding.flFragmentContainer.id, selected)
-                        .commit()
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab) {}
-                override fun onTabReselected(tab: TabLayout.Tab) {}
-            })
-        }
+//        binding.tlTabBar.apply {
+//            addTab(newTab().setText("탭1번"))
+//            addTab(newTab().setText("탭2번"))
+//
+//            setOnTabSelectedListener(object : OnTabSelectedListener {
+//                override fun onTabSelected(tab: TabLayout.Tab) {
+//                    val selected = if (tab.position == 0) TabOneFragment() else TabTwoFragment()
+//
+//                    supportFragmentManager
+//                        .beginTransaction()
+//                        .replace(binding.flFragmentContainer.id, selected)
+//                        .commit()
+//                }
+//
+//                override fun onTabUnselected(tab: TabLayout.Tab) {}
+//                override fun onTabReselected(tab: TabLayout.Tab) {}
+//            })
+//        }
     }
 }
