@@ -5,3 +5,5 @@
   - https://material.io/components/tabs/android#fixed-tabs
 - Dialog in MVVM
   - https://proandroiddev.com/dialogs-in-android-mvvm-5d6e1ca53b19
+- Scale View
+  - https://medium.com/@supahsoftware/custom-android-views-search-view-and-circular-reveal-animations-7bf2dadc800
